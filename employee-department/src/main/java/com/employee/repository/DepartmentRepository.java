@@ -1,22 +1,8 @@
 package com.employee.repository;
 
 import com.employee.entity.Department;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.*;
-
-@Repository
-public class DepartmentRepository{
-
-    private List<Department> deptList = new ArrayList<>();
-
-    public Department addDepartment(Department department){
-        deptList.add(department);
-        return department;
-    }
-
-    public Department findById(Long deptId){
-        return deptList.stream().filter(a->a.equals(deptId))
-    }
+public interface DepartmentRepository extends JpaRepository<Department,Long> {
 
 }
